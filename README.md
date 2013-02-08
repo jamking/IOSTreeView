@@ -9,7 +9,8 @@ The tree nodes store in an array,which are obtained through accessing the tree i
 nodes has nodeId,depth,name information.
 
 [0,1,2,2,3,1,1] represents a tree structure as below:
-0 - 1 - 2
-      - 2 -3 
-  - 1
-  - 1
+0   
+1    1   1
+2 2
+  3 
+  
