@@ -5,12 +5,8 @@ As a former android developer,I found a good treeview controller for android tre
 
 IOS Tree View. Thanks to KOTree(https://github.com/adamhoracek/KOTree), which is the best that I could have after googling. Based upon it, IOSTreeView supports more nodes with a simpler data structur with some small bugs fixed.  
 
-The tree nodes store in an array,which are obtained through accessing the tree in such order node,left child,right child.
-nodes has nodeId,depth,name information.
+The tree nodes store in an array,which are obtained through traversal the tree in Pre-order(root,left subtree,right subtree)
+nodes has nodeId,depth,name information. [0,1,2,2,3,1,1] represents a tree structure as below: 0(1(2,2(3)),1,1) 
 
-[0,1,2,2,3,1,1] represents a tree structure as below:
-0   
-1    1   1
-2 2
-  3 
+
   
