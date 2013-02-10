@@ -191,6 +191,14 @@
     return array;
 }
 
+- (NSMutableArray *) cloneTree:(NSMutableArray *)nodes{
+    NSMutableArray * array = [NSMutableArray array];
+    for (KOTreeNode *node in nodes) {
+        [array addObject:node];
+    }
+    return array;
+}
+
 - (int) getChildrenCount:(NSMutableArray *)nodes ofNode:(KOTreeNode *)node{
     int count = 0;
     NSInteger pos = [nodes indexOfObject:node];
@@ -243,9 +251,13 @@
     [super viewDidLoad];
 
     [self initialize];
-    self.selectedTreeNodes = [NSMutableArray array];
+     
+    //    self.selectedTreeNodes = [NSMutableArray array];
+    //    self.treeNodes = [self getFirstLevel:allNodes];
     
-    self.treeNodes = [self getFirstLevel:allNodes];
+    self.selectedTreeNodes = [self cloneTree:allNodes];
+    self.treeNodes = [self cloneTree:allNodes];
+
     
     treeNodeTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
 	[treeNodeTableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
